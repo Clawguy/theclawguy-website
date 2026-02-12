@@ -62,6 +62,20 @@
         
         header .container { display: flex; align-items: center; justify-content: space-between; }
         
+        .header-contact {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .header-phone {
+            color: var(--text-muted);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+        .header-phone:hover { color: var(--accent); }
+        
         .claw-icon {
             font-size: 32px;
             filter: drop-shadow(0 0 8px var(--accent));
@@ -315,16 +329,59 @@
         
         /* Footer */
         footer {
-            padding: 24px 0;
+            padding: 40px 0 24px;
+            border-top: 1px solid var(--border);
+            background: var(--bg-card);
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover { color: var(--accent); }
+        
+        .footer-copy {
             text-align: center;
             color: var(--text-muted);
             font-size: 0.85rem;
+            padding-top: 24px;
             border-top: 1px solid var(--border);
         }
         
         @media (max-width: 600px) {
             .hero h1 { font-size: 1.75rem; }
             .features { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .header-contact { flex-direction: column; gap: 8px; }
+            .header-phone { font-size: 0.75rem; }
         }
     </style>
 </head>
@@ -336,7 +393,10 @@
                 <span class="logo-text">the_claw_guy</span>
                 <span class="logo-cursor"></span>
             </div>
-            <a href="#contact" class="header-cta">Book Appointment</a>
+            <div class="header-contact">
+                <a href="tel:501-288-9340" class="header-phone">📞 (501) 288-9340</a>
+                <a href="#contact" class="header-cta">Book Appointment</a>
+            </div>
         </div>
     </header>
 
@@ -486,7 +546,17 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 The Claw Guy | Ann Arbor, MI | 🦞</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="claw-icon">🦞</span>
+                    <span>the_claw_guy</span>
+                </div>
+                <div class="footer-links">
+                    <a href="tel:501-288-9340">📞 (501) 288-9340</a>
+                    <a href="mailto:theclawguy@outlook.com">✉️ theclawguy@outlook.com</a>
+                </div>
+            </div>
+            <p class="footer-copy">© 2026 The Claw Guy | Ann Arbor, MI + 50mi radius | 🦞</p>
         </div>
     </footer>
 </body>
