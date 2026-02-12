@@ -44,7 +44,23 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 20px;
             font-weight: 700;
+            flex: 1;
         }
+        
+        .header-cta {
+            background: var(--accent);
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .header-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+        
+        header .container { display: flex; align-items: center; justify-content: space-between; }
         
         .claw-icon {
             font-size: 32px;
@@ -320,6 +336,7 @@
                 <span class="logo-text">the_claw_guy</span>
                 <span class="logo-cursor"></span>
             </div>
+            <a href="#contact" class="header-cta">Book Appointment</a>
         </div>
     </header>
 
@@ -391,6 +408,7 @@
                     </ul>
                 </div>
             </div>
+            <p style="text-align: center; color: var(--text-muted); margin-top: 24px; font-size: 0.9rem;">💡 Prices are starting points. Final quote depends on your specific setup and needs.</p>
         </div>
     </section>
 
