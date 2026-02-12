@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Claw Guy | AI Setup Service</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦞</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
@@ -327,6 +328,68 @@
         
         .submit-btn:hover { opacity: 0.9; }
         
+        /* FAQ */
+        .faq {
+            padding: 60px 0;
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 20px 0;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1rem;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.2s;
+        }
+        
+        .faq-question:hover {
+            color: var(--accent);
+        }
+        
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-question.active .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .faq-answer.open {
+            max-height: 200px;
+        }
+        
+        .faq-answer p {
+            padding: 0 0 20px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
         /* Footer */
         footer {
             padding: 40px 0 24px;
@@ -498,6 +561,59 @@
                         <div class="feature-icon">💬</div>
                         <h4>conversational</h4>
                         <p>Just tell it what you need</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2 class="section-title">faq</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('open')">
+                        <span>How long does setup take?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most setups are done in 2-3 hours. Basic installations are quicker; enterprise setups with multiple devices and custom automations take longer. We'll give you a time estimate during our consultation.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('open')">
+                        <span>Is my data safe?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. OpenClaw runs entirely on your local machine — your data never touches external servers unless you explicitly configure it to. Unlike cloud AI services, you maintain full control and privacy.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('open')">
+                        <span>Do you travel outside Ann Arbor?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! I cover a 50-mile radius from Ann Arbor including Ypsilanti, Detroit suburbs, and Flint area. Travel beyond that is possible for enterprise setups — just ask.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('open')">
+                        <span>What if I need help later?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>All packages include email support (7-30 days depending on tier). Pro and Enterprise customers get priority support. I'm also available for hourly consulting if you need new automations or integrations down the road.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" onclick="this.classList.toggle('active'); this.nextElementSibling.classList.toggle('open')">
+                        <span>What do I need to get started?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Just a Mac, Windows PC, or Linux machine. I'll handle the OpenClaw installation, configuration, and training. For the Pro package, have your devices ready. For Enterprise, we'll discuss your specific infrastructure needs beforehand.</p>
                     </div>
                 </div>
             </div>
